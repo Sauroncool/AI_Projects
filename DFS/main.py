@@ -1,5 +1,5 @@
 from augment import graph
-
+# from augment import graph
 
 def dfs(start, goal, forbidden_nodes=None):
     frontier = list()
@@ -10,8 +10,8 @@ def dfs(start, goal, forbidden_nodes=None):
     reached.append(start)
 
     while frontier:
-        current_node = frontier.pop()
         # print(frontier)
+        current_node = frontier.pop()
         # print(current_node)
         # print(children(current_node))
 
@@ -51,5 +51,8 @@ def children(v):
 
 start = 'H1'
 goal = 'H7'
-
 dfs(start, goal, graph.forbidden_nodes)
+
+# start = 'Arad'
+# goal = 'Bucharest'
+# dfs(start, goal)
