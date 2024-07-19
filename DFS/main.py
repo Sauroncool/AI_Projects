@@ -33,7 +33,6 @@ def dfs(start, goal):
                     path.reverse()
 
                     print("Path found: {}".format(path))
-                    # graph.output(path)
                     return
         # print(frontier)
 
