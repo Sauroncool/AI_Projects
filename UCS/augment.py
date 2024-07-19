@@ -22,3 +22,7 @@ class graph:
         'H6': [('H', 10), ('J', 10), ('H5', 10)],
         'H7': [('C', 10), ('E', 10), ('H', 10)]
         }
+
+    no_fly = ['A', 'F', 'E', 'J', 'L']
+    obstacle = ['B', 'C', 'G', 'K']
+    forbidden_nodes = no_fly + obstacle

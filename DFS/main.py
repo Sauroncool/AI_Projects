@@ -1,7 +1,7 @@
 from augment import graph
 
 
-def dfs(start, goal):
+def dfs(start, goal, forbidden_nodes=None):
     frontier = list()
     reached = list()
     parent = {}  # Store the  parents of each node
@@ -18,7 +18,7 @@ def dfs(start, goal):
         for child in children(current_node):
 
             #nodes not in  reached are added to frontier
-            if child not in reached and child not in forbidden_nodes:
+            if child not in reached and (forbidden_nodes is None or child not in forbidden_nodes):
                 frontier.append(child)
                 reached.append(child)
                 parent[child] = current_node
@@ -51,7 +51,5 @@ def children(v):
 
 start = 'H1'
 goal = 'H7'
-no_fly = ['A', 'F', 'E', 'J', 'L']
-obstacle = ['B', 'C', 'G', 'K']
-forbidden_nodes = no_fly + obstacle
-dfs(start, goal)
+
+dfs(start, goal, graph.forbidden_nodes)

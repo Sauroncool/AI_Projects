@@ -1,8 +1,9 @@
 from augment import graph
+# from augment2 import graph
 import heapq
 
 
-def ucs(start, goal, forbidden_nodes):
+def ucs(start, goal, forbidden_nodes=None):
     frontier = []  # Use a priority queue (min-heap)
     reached = set()
     parent = {}  # Store parents of each node
@@ -30,7 +31,7 @@ def ucs(start, goal, forbidden_nodes):
         for child in children(current_node):
             new_cost = current_cost + cost_to_reach(current_node, child)  # Replace with your cost function
 
-            if (child not in reached  or new_cost < cost[child]) and child not in forbidden_nodes:
+            if (child not in reached or new_cost < cost[child]) and (forbidden_nodes is None or child not in forbidden_nodes):
                 reached.add(child)
                 cost[child] = new_cost
                 parent[child] = current_node
@@ -54,7 +55,8 @@ def cost_to_reach(from_node, to_node):
 
 start = 'H1'
 goal = 'H7'
-no_fly = ['A', 'F', 'E', 'J', 'L']
-obstacle = ['B', 'C', 'G', 'K']
-forbidden_nodes = no_fly + obstacle
-ucs(start, goal, forbidden_nodes)
+ucs(start, goal, graph.forbidden_nodes)
+
+# start = 'Arad'
+# goal = 'Bucharest'
+# ucs(start, goal)
