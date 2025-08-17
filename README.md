@@ -7,3 +7,8 @@
 
 # UCS (Uniform Cost Search)
 # DFS (Depth First Search)
+
+
+WIthin Assignment Folder You can find Codes for Classic NQueens maze sudoku problem etc.
+
+Along with a project
