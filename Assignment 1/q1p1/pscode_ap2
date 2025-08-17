@@ -1,0 +1,26 @@
+create an empty dictionary called {Graph}
+
+create an empty dictionary called {H}
+
+start = <start_node>
+goal = <goal_node>
+
+define dist(i,j)
+    return euclidean distance from (i,j) to goal
+
+define generate()
+    create a 2d array maze with each value being 0(empty) or 1(wall)
+    print the maze
+    for each cell in the maze, calculate its heuristic distance using
+    the goal coordinates and dist(i,j) function and append it to {H}
+    for each cell
+        if the value of its neighbour in any of the four directions is 0,
+            add the value to the corresponding key in {Graph}
+    return
+
+define output(path)
+    print the path the obtained optimal path of the maze with "*" tracing out the correct path from start to goal
+    return path
+
+define heuristic function(n)
+    return {H[n]}

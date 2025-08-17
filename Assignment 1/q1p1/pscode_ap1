@@ -1,0 +1,21 @@
+create a dictionary called {Graph} with each key's values being a
+list of its corresponding node's neighbours and their separation
+
+start = <start_node>
+goal = <goal_node>
+
+create a dictionary called {H_dist} with each key's
+values being each node's estimated distance to the goal
+
+define heuristic function(n)
+    return {H_dist[n]}
+
+define output(path)
+    print the path in the format the user wants (this could be omitted as well)
+    return path
+
+define generate()
+    if the problem isn't already defined as a tree, then formulate it here
+    instead of {Graph}, generate children of each node and append it to {Graph}
+    return
+
